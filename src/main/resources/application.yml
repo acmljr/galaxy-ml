@@ -1,0 +1,17 @@
+spring:
+    quartz:
+        job-store-type: JDBC
+        jdbc:
+            initialize-schema: always
+        properties:
+            org:
+                quartz:                    threadPool:
+                        threadCount: 10 
+                    jobStore:
+                        isClustered: true
+                    scheduler: 
+                        instanceId: AUTO
+    datasource:
+        url: jdbc:h2:~/schedule;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+        driverClassName: org.h2.Driver
+
